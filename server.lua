@@ -13,10 +13,11 @@ AddEventHandler("wk_exotic:dropcoconut", function()
     local _source = source 
     local User = VORPcore.getUser(_source)
     local Character = User.getUsedCharacter
-    local drop = Config.coconut
+    local drop = Config.coconut[math.random(1, #Config.banana)]
+    local amount = math.random(1, 1)
 
-    VORPinv.addItem(_source, drop, 1)
-    TriggerClientEvent('vorp:TipRight', _source, "You found 1 ~d~Coconut .")
+    VORPinv.addItem(_source, drop, amount)
+    TriggerClientEvent('vorp:TipRight', _source, "You found " .. amount .. " ~d~Coconut .")
 end)
 
 RegisterServerEvent("wk_exotic:dropkiwi")
@@ -36,8 +37,8 @@ AddEventHandler("wk_exotic:dropbanana", function()
     local _source = source 
     local User = VORPcore.getUser(_source)
     local Character = User.getUsedCharacter
-    local drop = Config.banana
-    local amount = math.random(2, 4)
+    local drop = Config.banana[math.random(1, #Config.banana)]
+    local amount = math.random(1, 4)
 
     VORPinv.addItem(_source, drop, amount)
     TriggerClientEvent('vorp:TipRight', _source, "You found " .. amount .. " ~o~Bananas~q~.")
@@ -48,10 +49,11 @@ AddEventHandler("wk_exotic:dropananas", function()
     local _source = source 
     local User = VORPcore.getUser(_source)
     local Character = User.getUsedCharacter
-    local drop = Config.ananas
+    local drop = Config.ananas[math.random(1, #Config.ananas)]
+    local amount = math.random(1, 1)
 
-    VORPinv.addItem(_source, drop, 1)
-    TriggerClientEvent('vorp:TipRight', _source, "You found 1 ~o~Pineapple~q~.")
+    VORPinv.addItem(_source, drop, amount)
+    TriggerClientEvent('vorp:TipRight', _source, "You found " .. amount ..  " ~o~Pineapple~q~.")
 end)
 
 RegisterServerEvent("wk_exotic:melonmango")
